@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarDays, MessageCircle, LockKeyhole, Crosshair, Video, Eye, Gem, Award, MapPin, Mail, Phone, Clock3 } from "lucide-react";
+import { CalendarDays, MessageCircle, LockKeyhole, Crosshair, Video, Award, MapPin, Mail, Phone, Clock3 } from "lucide-react";
 import AreasGrid from "@/components/AreasGrid";
+import AboutReference from "@/components/AboutReference";
 import FAQ from "@/components/FAQ";
 import BlogCard from "@/components/BlogCard";
 import ContactForm from "@/components/ContactForm";
@@ -41,27 +42,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="section about-preview">
-        <div className="shell split-about">
-          <div className="about-image-frame">
-            <Image src="/images/barbara-about.webp" alt="Bárbara Cordeiro em seu escritório" width={864} height={1184} sizes="(max-width: 900px) 100vw, 45vw" />
-          </div>
-          <div className="about-copy">
-            <div className="section-head left"><span>Sobre</span><h2>Sobre a Advogada</h2></div>
-            <h3>Dra. Bárbara<br />Cordeiro</h3>
-            <p className="credentials">{site.profile.title}<br />{site.profile.oab}</p>
-            <div className="gold-line" />
-            <p>{site.profile.aboutLead}</p>
-            <p>{site.profile.aboutText}</p>
-            <Link className="text-link" href="/sobre">Conheça minha trajetória →</Link>
-            <div className="mv-grid">
-              <div><Award /><h4>Missão</h4><p>{site.profile.mission}</p></div>
-              <div><Eye /><h4>Visão</h4><p>{site.profile.vision}</p></div>
-              <div><Gem /><h4>Valores</h4><p>{site.profile.values.join(" · ")}</p></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutReference site={site} />
 
       <section className="section section-darker">
         <div className="shell">
