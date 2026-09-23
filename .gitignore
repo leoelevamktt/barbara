@@ -1,0 +1,12 @@
+node_modules
+.next
+.env*
+!.env.example
+.vercel
+.npm-cache
+*.log
+.DS_Store
+barbara-text.b64
+barbara-src.zip
+claude-prompt.txt
+*.tmp

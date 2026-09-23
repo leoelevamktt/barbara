@@ -1,0 +1,171 @@
+{
+  "profile": {
+    "name": "Bárbara Cordeiro",
+    "title": "Advogada Criminalista",
+    "oab": "OAB/SP 538.509",
+    "heroTitle": "Defesa Técnica, Estratégica e Humanizada.",
+    "heroText": "Atuação especializada em Direito Penal e Processo Penal com comprometimento, sigilo e excelência na defesa dos seus direitos e garantias fundamentais.",
+    "aboutLead": "Desde sempre, minha missão é garantir que a justiça seja alcançada de forma ética, técnica e humanizada.",
+    "aboutText": "A advocacia criminal me permite estar ao lado de pessoas em momentos delicados, oferecendo não apenas defesa, mas também acolhimento e orientação. Cada caso é único e merece uma estratégia personalizada, construída com dedicação e compromisso.",
+    "mission": "Oferecer defesa criminal estratégica, humanizada e eficiente, garantindo os direitos fundamentais dos nossos clientes.",
+    "vision": "Ser referência em advocacia criminal pela excelência técnica, comprometimento e resultados responsáveis.",
+    "values": [
+      "Ética",
+      "Justiça",
+      "Transparência",
+      "Compromisso",
+      "Respeito"
+    ]
+  },
+  "contact": {
+    "whatsapp": "5511999990000",
+    "phoneDisplay": "(11) 99999-0000",
+    "email": "contato@barbaracordeiro.adv.br",
+    "address": "Morumbi — São Paulo/SP",
+    "hours": "Segunda a Sexta · 09h às 18h",
+    "instagram": "https://instagram.com/",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/"
+  },
+  "areas": [
+    {
+      "slug": "audiencia-de-custodia",
+      "title": "Audiência de Custódia",
+      "description": "Atuação imediata para análise da legalidade da prisão e garantia dos direitos do custodiado.",
+      "icon": "UserRound"
+    },
+    {
+      "slug": "habeas-corpus",
+      "title": "Habeas Corpus",
+      "description": "Proteção da liberdade diante de prisões ilegais ou abusivas.",
+      "icon": "ShieldCheck"
+    },
+    {
+      "slug": "tribunal-do-juri",
+      "title": "Tribunal do Júri",
+      "description": "Defesa técnica em processos que envolvem crimes dolosos contra a vida.",
+      "icon": "UsersRound"
+    },
+    {
+      "slug": "crimes-contra-a-pessoa",
+      "title": "Crimes Contra a Pessoa",
+      "description": "Defesa criminal em casos de ameaça, injúria, calúnia, difamação e outros.",
+      "icon": "User"
+    },
+    {
+      "slug": "crimes-patrimoniais",
+      "title": "Crimes Patrimoniais",
+      "description": "Furto, roubo, estelionato, apropriação indébita e outros.",
+      "icon": "BriefcaseBusiness"
+    },
+    {
+      "slug": "lei-maria-da-penha",
+      "title": "Lei Maria da Penha",
+      "description": "Atuação técnica em processos e medidas relacionadas à Lei Maria da Penha.",
+      "icon": "Scale"
+    },
+    {
+      "slug": "trafico-de-drogas",
+      "title": "Tráfico de Drogas",
+      "description": "Defesa especializada em casos relacionados à Lei de Drogas.",
+      "icon": "Leaf"
+    },
+    {
+      "slug": "crimes-digitais",
+      "title": "Crimes Digitais",
+      "description": "Golpes online, invasão de dispositivos, crimes contra a honra na internet e outros.",
+      "icon": "MonitorSmartphone"
+    },
+    {
+      "slug": "recursos-criminais",
+      "title": "Recursos Criminais",
+      "description": "Interposição e acompanhamento de recursos nas diferentes fases do processo criminal.",
+      "icon": "FileText"
+    },
+    {
+      "slug": "execucao-penal",
+      "title": "Execução Penal",
+      "description": "Atuação em progressão de regime, livramento condicional, remição de pena e outros benefícios.",
+      "icon": "Landmark"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Fui preso. O que devo fazer?",
+      "a": "Entre em contato imediatamente com um advogado criminalista. O acompanhamento jurídico é fundamental desde o primeiro momento para garantir seus direitos e evitar prejuízos ao caso."
+    },
+    {
+      "q": "Posso ser ouvido sem advogado?",
+      "a": "Antes de prestar declarações em situação que possa repercutir juridicamente, procure orientação profissional para compreender seus direitos e deveres."
+    },
+    {
+      "q": "O atendimento pode ser online?",
+      "a": "Sim. O escritório realiza atendimentos online com sigilo e segurança para clientes de todo o Brasil."
+    },
+    {
+      "q": "Quanto custa uma consulta?",
+      "a": "Os honorários dependem da complexidade e da natureza do atendimento. Entre em contato para receber orientações iniciais e informações sobre a consulta."
+    },
+    {
+      "q": "Atende em outras cidades?",
+      "a": "Sim. Há possibilidade de atendimento e atuação em outras cidades, conforme as características e necessidades de cada caso."
+    }
+  ],
+  "seo": {
+    "siteName": "Bárbara Cordeiro Advocacia Criminal",
+    "defaultTitle": "Bárbara Cordeiro | Advogada Criminalista em São Paulo",
+    "description": "Advocacia criminal técnica, estratégica e humanizada em São Paulo, com atuação em Direito Penal e Processo Penal.",
+    "keywords": [
+      "advogada criminalista",
+      "advogado criminal",
+      "direito penal",
+      "processo penal",
+      "habeas corpus",
+      "audiência de custódia",
+      "tribunal do júri",
+      "São Paulo"
+    ]
+  },
+  "posts": [
+    {
+      "id": "prisao-em-flagrante",
+      "slug": "o-que-fazer-em-caso-de-prisao-em-flagrante",
+      "title": "O que fazer em caso de prisão em flagrante?",
+      "excerpt": "Entenda quais direitos devem ser observados desde o primeiro momento e por que a assistência jurídica imediata é importante.",
+      "date": "2026-09-23",
+      "category": "Direito Penal",
+      "published": true,
+      "content": "A prisão em flagrante exige atenção imediata aos direitos e garantias da pessoa detida. A comunicação com a família e com a defesa técnica, a análise da legalidade do ato e o acompanhamento da audiência de custódia são etapas relevantes.\\n\\nA pessoa presa tem direito de permanecer em silêncio, de conhecer o motivo da prisão e de ser assistida por advogado. O silêncio não pode ser interpretado como confissão.\\n\\nCada situação possui particularidades e deve ser analisada individualmente por profissional habilitado. Este conteúdo é informativo e não substitui orientação jurídica aplicada ao caso concreto."
+    },
+    {
+      "id": "audiencia-de-custodia",
+      "slug": "como-funciona-uma-audiencia-de-custodia",
+      "title": "Como funciona uma audiência de custódia?",
+      "excerpt": "Saiba como ocorre a audiência, qual é sua finalidade e por que a defesa técnica é importante nessa etapa.",
+      "date": "2026-09-20",
+      "category": "Processo Penal",
+      "published": true,
+      "content": "A audiência de custódia é o ato em que a pessoa presa é apresentada ao Judiciário para análise da legalidade da prisão e das condições em que ela ocorreu.\\n\\nNesse momento podem ser avaliadas medidas como relaxamento de prisão ilegal, liberdade provisória ou, quando presentes os requisitos legais, a manutenção da custódia.\\n\\nA defesa técnica reúne informações relevantes e aponta eventuais irregularidades. Este texto tem caráter informativo e não representa avaliação de qualquer caso específico."
+    },
+    {
+      "id": "habeas-corpus",
+      "slug": "quando-cabe-habeas-corpus",
+      "title": "Quando cabe Habeas Corpus?",
+      "excerpt": "Entenda em quais situações o Habeas Corpus pode ser utilizado para proteger o direito de ir e vir.",
+      "date": "2026-09-18",
+      "category": "Garantias Fundamentais",
+      "published": true,
+      "content": "O Habeas Corpus é uma garantia constitucional destinada a proteger a liberdade de locomoção diante de ilegalidade ou abuso de poder. Pode ser utilizado quando a restrição já existe ou quando há ameaça concreta de que ela ocorra.\\n\\nO cabimento depende dos fatos, da situação processual e dos documentos disponíveis. Em hipóteses urgentes, pode haver pedido de medida liminar, cuja análise cabe ao órgão judicial competente.\\n\\nA escolha da medida adequada depende de análise técnica. Este artigo oferece informação geral e não constitui promessa de resultado."
+    },
+    {
+      "id": "depoimento-acompanhado",
+      "slug": "posso-ser-acompanhado-por-advogado-na-delegacia",
+      "title": "Posso ser acompanhado por advogado na delegacia?",
+      "excerpt": "Veja por que a presença da advocacia contribui para o respeito às garantias durante depoimentos e procedimentos policiais.",
+      "date": "2026-09-15",
+      "category": "Defesa Criminal",
+      "published": true,
+      "content": "A assistência de advogado em atos realizados na delegacia permite orientação técnica e acompanhamento do respeito às garantias legais.\\n\\nPara a pessoa investigada, o acompanhamento é especialmente relevante porque ela tem direito ao silêncio e não é obrigada a produzir prova contra si. A defesa também pode orientar sobre documentos e procedimentos.\\n\\nAs providências adequadas variam conforme a posição da pessoa e o estágio da investigação. O conteúdo desta página é informativo e não substitui consulta jurídica."
+    }
+  ]
+}
