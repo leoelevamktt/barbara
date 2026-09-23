@@ -14,13 +14,16 @@ export default async function Home() {
   const site = await getSiteContent();
   const posts = (await getPublishedPosts()).slice(0, 4);
   const wa = `https://wa.me/${site.contact.whatsapp}`;
+  const heroParts = site.profile.heroTitle.trim().split(/\s+/);
+  const heroAccent = heroParts.pop() || "";
+  const heroMain = heroParts.join(" ");
   return (
     <>
       <section className="hero">
         <div className="shell hero-grid">
           <div className="hero-copy">
             <span className="eyebrow">Advocacia Criminal · São Paulo</span>
-            <h1>Defesa Técnica,<br />Estratégica e <em>Humanizada.</em></h1>
+            <h1>{heroMain} <em>{heroAccent}</em></h1>
             <p>{site.profile.heroText}</p>
             <div className="hero-actions">
               <a className="btn btn-gold" href={wa} target="_blank" rel="noreferrer"><CalendarDays size={17} /> Agendar consulta</a>
