@@ -69,7 +69,7 @@ export default async function Home() {
             <FAQ faqs={site.faqs} />
             <div className="faq-cta"><span>Ainda tem dúvidas?<small>Fale conosco agora mesmo.</small></span><a className="btn btn-outline-gold" href={wa} target="_blank" rel="noreferrer"><MessageCircle size={16} /> Falar no WhatsApp</a></div>
           </div>
-          <div className="justice-art" aria-hidden="true"><Image src="/images/faq-justice.webp" alt="" fill sizes="(max-width: 820px) 100vw, 34vw" /></div>
+          <div className="justice-art" aria-hidden="true"><Image src="/images/faq-justice-hq.webp" alt="" fill sizes="(max-width: 820px) 100vw, 34vw" quality={100} /></div>
         </div>
       </section>
 

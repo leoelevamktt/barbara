@@ -130,7 +130,7 @@ p { color: var(--muted); }
 .faq-cta span { font-family: Georgia, serif; font-size: 17px; }
 .faq-cta small { display: block; font-family: Arial, sans-serif; font-size: 10px; color: #9d978c; }
 .justice-art { min-height: 510px; border-left: 1px solid #2e2921; position: relative; overflow: hidden; background: #090909; }
-.justice-art img { object-fit: cover; object-position: 68% center; filter: saturate(.92) contrast(1.03); }
+.justice-art img { object-fit: cover; object-position: center center; filter: saturate(.96) contrast(1.02); image-rendering: auto; }
 
 .contact-home { background: #0a0a0a; }
 .contact-grid { display: grid; grid-template-columns: .85fr 1fr .9fr; gap: 18px; align-items: stretch; }
