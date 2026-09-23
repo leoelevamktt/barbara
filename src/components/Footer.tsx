@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Camera as Instagram, UsersRound as Facebook, BriefcaseBusiness as Linkedin, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import type { SiteContent } from "@/lib/content";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function Footer({ site }: { site: SiteContent }) {
   const { contact } = site;
@@ -9,7 +10,7 @@ export default function Footer({ site }: { site: SiteContent }) {
     <footer className="footer">
       <div className="shell footer-grid">
         <div className="footer-brand">
-          <Image src="/images/logo.webp" alt="Bárbara Cordeiro Advocacia" width={310} height={142} />
+          <Image src="/images/logo.webp" alt="Bárbara Cordeiro Advocacia" width={220} height={101} />
         </div>
         <div>
           <h3>Navegação</h3>
@@ -21,15 +22,11 @@ export default function Footer({ site }: { site: SiteContent }) {
         </div>
         <div>
           <h3>Contato</h3>
-          <p><Phone size={15} /> {contact.phoneDisplay}</p>
-          <p><Mail size={15} /> {contact.email}</p>
-          <p><MapPin size={15} /> {contact.address}</p>
+          <p><Phone size={15} /> <span>{contact.phoneDisplay}</span></p>
+          <p><Mail size={15} /> <span>{contact.email}</span></p>
+          <p><MapPin size={15} /> <span>{contact.address}</span></p>
           <h3 className="social-title">Siga nas redes</h3>
-          <div className="socials">
-            <a href={contact.instagram} aria-label="Instagram" target="_blank" rel="noreferrer"><Instagram /></a>
-            <a href={contact.facebook} aria-label="Facebook" target="_blank" rel="noreferrer"><Facebook /></a>
-            <a href={contact.linkedin} aria-label="LinkedIn" target="_blank" rel="noreferrer"><Linkedin /></a>
-          </div>
+          <SocialLinks instagram={contact.instagram} facebook={contact.facebook} linkedin={contact.linkedin} whatsapp={contact.whatsapp} />
         </div>
       </div>
       <div className="footer-bottom">© {new Date().getFullYear()} Bárbara Cordeiro Advocacia Criminal. Todos os direitos reservados.</div>

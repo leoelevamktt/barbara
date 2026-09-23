@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarDays, MessageCircle, LockKeyhole, Crosshair, Video, Eye, Gem, Award, Camera as Instagram, UsersRound as Facebook, BriefcaseBusiness as Linkedin, MapPin, Mail, Phone, Clock3 } from "lucide-react";
+import { CalendarDays, MessageCircle, LockKeyhole, Crosshair, Video, Eye, Gem, Award, MapPin, Mail, Phone, Clock3 } from "lucide-react";
 import AreasGrid from "@/components/AreasGrid";
 import FAQ from "@/components/FAQ";
 import BlogCard from "@/components/BlogCard";
 import ContactForm from "@/components/ContactForm";
+import MapEmbed from "@/components/MapEmbed";
+import SocialLinks from "@/components/SocialLinks";
 import { getPublishedPosts, getSiteContent } from "@/lib/content";
 
 export default async function Home() {
@@ -83,7 +85,7 @@ export default async function Home() {
             <FAQ faqs={site.faqs} />
             <div className="faq-cta"><span>Ainda tem dúvidas?<small>Fale conosco agora mesmo.</small></span><a className="btn btn-outline-gold" href={wa} target="_blank" rel="noreferrer"><MessageCircle size={16} /> Falar no WhatsApp</a></div>
           </div>
-          <div className="justice-art" aria-hidden="true"><div className="justice-ring" /><div className="justice-scale">⚖</div><span>Justiça, técnica e estratégia.</span></div>
+          <div className="justice-art" aria-hidden="true"><Image src="/images/faq-justice.webp" alt="" fill sizes="(max-width: 820px) 100vw, 34vw" /></div>
         </div>
       </section>
 
@@ -95,12 +97,10 @@ export default async function Home() {
             <p><Phone /> <span><b>WhatsApp</b>{site.contact.phoneDisplay}</span></p>
             <p><Mail /> <span><b>E-mail</b>{site.contact.email}</span></p>
             <p><Clock3 /> <span><b>Horário de atendimento</b>{site.contact.hours}</span></p>
-            <div className="socials contact-socials">
-              <a href={site.contact.instagram} aria-label="Instagram"><Instagram /></a><a href={site.contact.facebook} aria-label="Facebook"><Facebook /></a><a href={site.contact.linkedin} aria-label="LinkedIn"><Linkedin /></a>
-            </div>
+            <SocialLinks instagram={site.contact.instagram} facebook={site.contact.facebook} linkedin={site.contact.linkedin} whatsapp={site.contact.whatsapp} className="contact-socials" />
           </div>
           <ContactForm whatsapp={site.contact.whatsapp} />
-          <div className="map-card"><div className="map-grid-lines" /><MapPin size={46} /><strong>Morumbi</strong><span>São Paulo · SP</span></div>
+          <MapEmbed address={site.contact.address} />
         </div>
       </section>
     </>
