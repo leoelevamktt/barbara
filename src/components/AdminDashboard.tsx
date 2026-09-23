@@ -1,10 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
-  Activity, BookOpen, BriefcaseBusiness, CheckCircle2, ChevronDown, ChevronUp,
-  CircleHelp, ExternalLink, FileText, Globe2, LayoutDashboard, LogOut, MessageSquareText,
-  Plus, RefreshCw, Save, Search, Settings2, ShieldCheck, Trash2, UserRound, X
+  Activity, BookOpen, BriefcaseBusiness, CheckCircle2, ChevronDown, ChevronUp, Copy,
+  CircleHelp, Download, ExternalLink, FileText, Globe2, LayoutDashboard, LogOut, MessageSquareText,
+  Plus, RefreshCw, Save, Search, Settings2, ShieldCheck, Trash2, Upload, UserRound, X
 } from "lucide-react";
 import type { Area, Faq, Post, SiteContent } from "@/lib/content";
 
@@ -36,11 +36,17 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
   const [dirty, setDirty] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [postDraft, setPostDraft] = useState<Post>(blankPost);
+  const [postQuery, setPostQuery] = useState("");
 
   const orderedPosts = useMemo(
     () => [...content.posts].sort((a, b) => +new Date(b.date) - +new Date(a.date)),
     [content.posts]
   );
+  const filteredPosts = useMemo(() => {
+    const query = postQuery.trim().toLocaleLowerCase("pt-BR");
+    if (!query) return orderedPosts;
+    return orderedPosts.filter((post) => [post.title, post.category, post.slug].some((value) => value.toLocaleLowerCase("pt-BR").includes(query)));
+  }, [orderedPosts, postQuery]);
 
   const stats = useMemo(() => ({
     published: content.posts.filter((post) => post.published).length,
@@ -48,6 +54,16 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
     areas: content.areas.length,
     faqs: content.faqs.length
   }), [content]);
+
+  useEffect(() => {
+    const handler = (event: BeforeUnloadEvent) => {
+      if (!dirty) return;
+      event.preventDefault();
+      event.returnValue = "";
+    };
+    window.addEventListener("beforeunload", handler);
+    return () => window.removeEventListener("beforeunload", handler);
+  }, [dirty]);
 
   function mutate(updater: (prev: SiteContent) => SiteContent) {
     setContent((prev) => updater(prev));
@@ -91,6 +107,32 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
     setContent(await response.json());
     setDirty(false);
     setMessage("Conteúdo recarregado.");
+  }
+
+  function exportBackup() {
+    const blob = new Blob([JSON.stringify(content, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `barbara-cordeiro-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+    setMessage("Backup exportado com sucesso.");
+  }
+
+  async function importBackup(file?: File) {
+    if (!file) return;
+    try {
+      const parsed = JSON.parse(await file.text()) as SiteContent;
+      if (!parsed?.profile?.name || !Array.isArray(parsed.posts) || !Array.isArray(parsed.areas) || !Array.isArray(parsed.faqs)) {
+        throw new Error("Estrutura inválida.");
+      }
+      setContent(parsed);
+      setDirty(true);
+      setMessage("Backup carregado. Revise o conteúdo e clique em Salvar alterações para publicar.");
+    } catch {
+      setMessage("O arquivo selecionado não é um backup válido deste site.");
+    }
   }
 
   function slugify(value: string) {
@@ -138,6 +180,24 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
   async function deletePost(id: string) {
     if (!confirm("Excluir este artigo permanentemente?")) return;
     await saveAll({ ...content, posts: content.posts.filter((post) => post.id !== id) } as SiteContent);
+  }
+
+  function duplicatePost(post: Post) {
+    const timestamp = Date.now();
+    setEditingId("__new");
+    setPostDraft({
+      ...post,
+      id: `post-${timestamp}`,
+      slug: `${post.slug}-copia-${String(timestamp).slice(-5)}`,
+      title: `${post.title} (cópia)`,
+      published: false
+    });
+    setMessage("Cópia criada como rascunho. Revise antes de salvar.");
+  }
+
+  async function togglePostPublished(post: Post) {
+    const posts = content.posts.map((item) => item.id === post.id ? { ...item, published: !item.published } : item);
+    await saveAll({ ...content, posts } as SiteContent);
   }
 
   function updateArea(index: number, key: keyof Area, value: string) {
@@ -294,6 +354,8 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
                 <div className="admin-quick-actions">
                   <button onClick={() => { setTab("blog"); newPost(); }}><Plus size={16} />Novo artigo</button>
                   <button onClick={() => setTab("seo")}><Search size={16} />Revisar SEO</button>
+                  <button onClick={exportBackup}><Download size={16} />Exportar backup</button>
+                  <label className="admin-import-action"><Upload size={16} />Importar backup<input type="file" accept="application/json,.json" onChange={(e) => importBackup(e.target.files?.[0])} /></label>
                   <button onClick={() => setTab("contact")}><MessageSquareText size={16} />Atualizar contato</button>
                   <a href="/" target="_blank" rel="noreferrer"><ExternalLink size={16} />Abrir site</a>
                 </div>
@@ -414,14 +476,27 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
               </div>
             ) : (
               <>
-                <div className="admin-collection-toolbar"><p>{content.posts.length} artigos · {stats.published} publicados · {stats.drafts} rascunhos</p><button className="btn btn-gold" onClick={newPost}><Plus size={16} />Novo artigo</button></div>
+                <div className="admin-collection-toolbar">
+                  <p>{content.posts.length} artigos · {stats.published} publicados · {stats.drafts} rascunhos</p>
+                  <button className="btn btn-gold" onClick={newPost}><Plus size={16} />Novo artigo</button>
+                </div>
+                <div className="admin-blog-controls">
+                  <div className="admin-search-box"><Search size={16} /><input value={postQuery} onChange={(e) => setPostQuery(e.target.value)} placeholder="Buscar por título, categoria ou slug..." /></div>
+                  <span>{filteredPosts.length} resultado{filteredPosts.length === 1 ? "" : "s"}</span>
+                </div>
                 <div className="admin-posts">
-                  {orderedPosts.map((post) => (
+                  {filteredPosts.map((post) => (
                     <div className="admin-post-row" key={post.id}>
                       <div><span>{post.category} · {post.date}</span><strong>{post.title}</strong><small className={post.published ? "status-published" : "status-draft"}>{post.published ? "Publicado" : "Rascunho"}</small></div>
-                      <div><button onClick={() => editPost(post)}>Editar</button><button className="danger" onClick={() => deletePost(post.id)}>Excluir</button></div>
+                      <div>
+                        <button onClick={() => togglePostPublished(post)}>{post.published ? "Despublicar" : "Publicar"}</button>
+                        <button onClick={() => duplicatePost(post)} title="Duplicar artigo"><Copy size={13} /></button>
+                        <button onClick={() => editPost(post)}>Editar</button>
+                        <button className="danger" onClick={() => deletePost(post.id)}>Excluir</button>
+                      </div>
                     </div>
                   ))}
+                  {filteredPosts.length === 0 && <div className="admin-empty-state">Nenhum artigo encontrado para essa busca.</div>}
                 </div>
               </>
             )}
