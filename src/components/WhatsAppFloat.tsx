@@ -6,7 +6,6 @@ export default function WhatsAppFloat({ number }: { number: string }) {
     <a className="whatsapp-float" href={url} target="_blank" rel="noopener noreferrer"
       aria-label="Falar com a Dra. Bárbara pelo WhatsApp">
       <FaWhatsapp aria-hidden="true" />
-      <span>Fale pelo WhatsApp</span>
     </a>
   );
 }

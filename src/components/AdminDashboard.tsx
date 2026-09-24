@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import LeadsPanel from "@/components/LeadsPanel";
 import {
   Activity, BookOpen, BriefcaseBusiness, CheckCircle2, ChevronDown, ChevronUp, Copy,
-  CircleHelp, Download, ExternalLink, FileText, Globe2, LayoutDashboard, LogOut, MessageSquareText,
+  CircleHelp, Download, ExternalLink, FileText, Globe2, Inbox, LayoutDashboard, LogOut, MessageSquareText,
   Plus, RefreshCw, Save, Search, Settings2, ShieldCheck, Trash2, Upload, UserRound, X
 } from "lucide-react";
 import type { Area, Faq, Post, SiteContent } from "@/lib/content";
 
-type Tab = "dashboard" | "site" | "about" | "areas" | "faq" | "blog" | "seo" | "contact";
+type Tab = "dashboard" | "leads" | "site" | "about" | "areas" | "faq" | "blog" | "seo" | "contact";
 
 const blankPost: Post = {
   id: "",
@@ -37,6 +38,7 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [postDraft, setPostDraft] = useState<Post>(blankPost);
   const [postQuery, setPostQuery] = useState("");
+  const [leadCount, setLeadCount] = useState<number | null>(null);
 
   const orderedPosts = useMemo(
     () => [...content.posts].sort((a, b) => +new Date(b.date) - +new Date(a.date)),
@@ -47,6 +49,16 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
     if (!query) return orderedPosts;
     return orderedPosts.filter((post) => [post.title, post.category, post.slug].some((value) => value.toLocaleLowerCase("pt-BR").includes(query)));
   }, [orderedPosts, postQuery]);
+
+  useEffect(() => {
+    if (tab !== "dashboard") return;
+    let active = true;
+    fetch("/api/admin/leads", { cache: "no-store" })
+      .then((res) => res.ok ? res.json() : Promise.reject())
+      .then((data) => { if (active) setLeadCount(data.leads.length); })
+      .catch(() => { if (active) setLeadCount(null); });
+    return () => { active = false; };
+  }, [tab]);
 
   const stats = useMemo(() => ({
     published: content.posts.filter((post) => post.published).length,
@@ -259,6 +271,7 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
 
   const nav = [
     { id: "dashboard" as Tab, label: "Visão geral", icon: LayoutDashboard },
+    { id: "leads" as Tab, label: "Leads", icon: Inbox },
     { id: "site" as Tab, label: "Página inicial", icon: Globe2 },
     { id: "about" as Tab, label: "Sobre", icon: UserRound },
     { id: "areas" as Tab, label: "Áreas de atuação", icon: BriefcaseBusiness },
@@ -270,6 +283,7 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
 
   const titles: Record<Tab, string> = {
     dashboard: "Visão geral",
+    leads: "Leads recebidos",
     site: "Página inicial",
     about: "Sobre a advogada",
     areas: "Áreas de atuação",
@@ -331,6 +345,7 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
         {tab === "dashboard" && (
           <div className="admin-dashboard">
             <div className="admin-stats">
+              <div><Inbox /><strong>{leadCount ?? "—"}</strong><span>Leads recebidos</span></div>
               <div><BookOpen /><strong>{stats.published}</strong><span>Artigos publicados</span></div>
               <div><FileText /><strong>{stats.drafts}</strong><span>Rascunhos</span></div>
               <div><BriefcaseBusiness /><strong>{stats.areas}</strong><span>Áreas de atuação</span></div>
@@ -352,6 +367,7 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
               <div className="admin-card">
                 <div className="admin-card-head"><div><span className="admin-kicker">Ações rápidas</span><h2>Atalhos</h2></div><Settings2 size={22} /></div>
                 <div className="admin-quick-actions">
+                  <button onClick={() => setTab("leads")}><Inbox size={16} />Ver leads</button>
                   <button onClick={() => { setTab("blog"); newPost(); }}><Plus size={16} />Novo artigo</button>
                   <button onClick={() => setTab("seo")}><Search size={16} />Revisar SEO</button>
                   <button onClick={exportBackup}><Download size={16} />Exportar backup</button>
@@ -373,6 +389,8 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
             </div>
           </div>
         )}
+
+        {tab === "leads" && <LeadsPanel />}
 
         {tab === "site" && (
           <div className="admin-form-grid">
