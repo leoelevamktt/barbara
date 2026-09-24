@@ -34,8 +34,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     <article>
       <section className="page-hero article-hero">
         <div className="shell article-shell">
-          <Link href="/blog" className="back-link"><ArrowLeft size={16} /> Voltar ao blog</Link>
-          <span>{post.category}</span>
+          <nav className="article-back-nav" aria-label="Navegação do artigo">
+            <Link href="/blog" className="back-link"><ArrowLeft size={16} /> Voltar ao blog</Link>
+          </nav>
+          <span className="article-category">{post.category}</span>
           <h1>{post.title}</h1>
           <p>{post.excerpt}</p>
           <time dateTime={post.date}>
