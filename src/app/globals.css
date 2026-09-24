@@ -384,7 +384,7 @@ p { color: var(--muted); }
 /* Reference-aligned About section */
 .about-reference { background: #090909; padding: 58px 0 64px; }
 .about-reference-heading { margin-bottom: 22px; }
-.about-reference-heading h2 { font-size: clamp(31px, 3vw, 44px); line-height: 1.05; }
+.about-reference-heading :is(h1, h2) { font-size: clamp(31px, 3vw, 44px); line-height: 1.05; }
 .about-reference-heading span { display: block; margin-top: 5px; color: #9f7a42; font-size: 9px; letter-spacing: .08em; }
 .about-reference-main { display: grid; grid-template-columns: .78fr 1.22fr; gap: 28px; align-items: stretch; }
 .about-reference-photo { overflow: hidden; border: 1px solid #2e2923; background: #111; min-height: 410px; }

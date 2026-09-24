@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Award, Eye, Gem } from "lucide-react";
 import type { SiteContent } from "@/lib/content";
 
-export default function AboutReference({ site }: {
+export default function AboutReference({ site, breadcrumb = false }: {
   site: SiteContent;
   breadcrumb?: boolean;
 }) {
@@ -10,7 +10,7 @@ export default function AboutReference({ site }: {
     <section className="section about-reference">
       <div className="shell">
         <header className="about-reference-heading">
-          <h2>Sobre a Advogada</h2>
+          {breadcrumb ? <h1>Sobre a Advogada</h1> : <h2>Sobre a Advogada</h2>}
           <span>Início / Sobre</span>
         </header>
 
