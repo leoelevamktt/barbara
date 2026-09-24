@@ -19,7 +19,7 @@ export default function Header({ whatsapp }: { whatsapp: string }) {
     <header className="site-header">
       <div className="shell header-inner">
         <Link href="/" className="brand" aria-label="Bárbara Cordeiro - início">
-          <Image src="/images/logo.webp" alt="Bárbara Cordeiro Advocacia" width={235} height={108} priority />
+          <Image src="/images/logo-transparent.png" alt="Bárbara Cordeiro Advocacia Criminal" width={1280} height={587} sizes="(max-width: 820px) 160px, 178px" priority />
         </Link>
         <nav className="desktop-nav" aria-label="Navegação principal">
           {links.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}

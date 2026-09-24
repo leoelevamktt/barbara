@@ -5,10 +5,10 @@
     "oab": "OAB/SP 538.509",
     "heroTitle": "Defesa Técnica, Estratégica e Humanizada.",
     "heroText": "Atuação especializada em Direito Penal e Processo Penal com comprometimento, sigilo e excelência na defesa dos seus direitos e garantias fundamentais.",
-    "aboutLead": "Desde sempre, minha missão é garantir que a justiça seja alcançada de forma ética, técnica e humanizada.",
-    "aboutText": "A advocacia criminal me permite estar ao lado de pessoas em momentos delicados, oferecendo não apenas defesa, mas também acolhimento e orientação. Cada caso é único e merece uma estratégia personalizada, construída com dedicação e compromisso.",
+    "aboutLead": "Minha missão é oferecer uma defesa ética, técnica e humanizada, com atenção às particularidades de cada caso.",
+    "aboutText": "A advocacia criminal me permite acompanhar pessoas em momentos delicados, oferecendo defesa técnica, acolhimento e orientação. Cada caso é único e merece uma estratégia personalizada, construída com dedicação e compromisso.",
     "mission": "Oferecer defesa criminal estratégica, humanizada e eficiente, garantindo os direitos fundamentais dos nossos clientes.",
-    "vision": "Ser referência em advocacia criminal pela excelência técnica, comprometimento e resultados responsáveis.",
+    "vision": "Ser referência em advocacia criminal pela excelência técnica, pelo comprometimento e pela atuação responsável.",
     "values": [
       "Ética",
       "Justiça",
@@ -18,14 +18,15 @@
     ]
   },
   "contact": {
-    "whatsapp": "5511999990000",
-    "phoneDisplay": "(11) 99999-0000",
-    "email": "contato@barbaracordeiro.adv.br",
-    "address": "Morumbi — São Paulo/SP",
-    "hours": "Segunda a Sexta · 09h às 18h",
-    "instagram": "https://instagram.com/",
-    "facebook": "https://facebook.com/",
-    "linkedin": "https://linkedin.com/"
+    "whatsapp": "5511970571549",
+    "phoneDisplay": "(11) 97057-1549",
+    "email": "barbara@barbaracordeiro.adv.br",
+    "address": "Rua Dr. Luiz Migliano, 1986, sala 501, Morumbi, São Paulo - SP",
+    "hours": "Segunda a sexta-feira, das 9h às 18h",
+    "instagram": "https://www.instagram.com/barbaracordeiroadv/",
+    "facebook": "",
+    "linkedin": "",
+    "urgentHours": "Plantão de urgência: 24 horas"
   },
   "areas": [
     {
@@ -135,7 +136,7 @@
       "date": "2026-09-23",
       "category": "Direito Penal",
       "published": true,
-      "content": "A prisão em flagrante exige atenção imediata aos direitos e garantias da pessoa detida. A comunicação com a família e com a defesa técnica, a análise da legalidade do ato e o acompanhamento da audiência de custódia são etapas relevantes.\\n\\nA pessoa presa tem direito de permanecer em silêncio, de conhecer o motivo da prisão e de ser assistida por advogado. O silêncio não pode ser interpretado como confissão.\\n\\nCada situação possui particularidades e deve ser analisada individualmente por profissional habilitado. Este conteúdo é informativo e não substitui orientação jurídica aplicada ao caso concreto."
+      "content": "A prisão em flagrante exige atenção imediata aos direitos e garantias da pessoa detida. A comunicação com a família e com a defesa técnica, a análise da legalidade do ato e o acompanhamento da audiência de custódia são etapas relevantes.\n\nA pessoa presa tem direito de permanecer em silêncio, de conhecer o motivo da prisão e de ser assistida por advogado. O silêncio não pode ser interpretado como confissão.\n\nCada situação possui particularidades e deve ser analisada individualmente por profissional habilitado. Este conteúdo é informativo e não substitui orientação jurídica aplicada ao caso concreto."
     },
     {
       "id": "audiencia-de-custodia",
@@ -145,17 +146,17 @@
       "date": "2026-09-20",
       "category": "Processo Penal",
       "published": true,
-      "content": "A audiência de custódia é o ato em que a pessoa presa é apresentada ao Judiciário para análise da legalidade da prisão e das condições em que ela ocorreu.\\n\\nNesse momento podem ser avaliadas medidas como relaxamento de prisão ilegal, liberdade provisória ou, quando presentes os requisitos legais, a manutenção da custódia.\\n\\nA defesa técnica reúne informações relevantes e aponta eventuais irregularidades. Este texto tem caráter informativo e não representa avaliação de qualquer caso específico."
+      "content": "A audiência de custódia é o ato em que a pessoa presa é apresentada ao Judiciário para análise da legalidade da prisão e das condições em que ela ocorreu.\n\nNesse momento podem ser avaliadas medidas como relaxamento de prisão ilegal, liberdade provisória ou, quando presentes os requisitos legais, a manutenção da custódia.\n\nA defesa técnica reúne informações relevantes e aponta eventuais irregularidades. Este texto tem caráter informativo e não representa avaliação de qualquer caso específico."
     },
     {
       "id": "habeas-corpus",
       "slug": "quando-cabe-habeas-corpus",
-      "title": "Quando cabe Habeas Corpus?",
+      "title": "Quando cabe habeas corpus?",
       "excerpt": "Entenda em quais situações o Habeas Corpus pode ser utilizado para proteger o direito de ir e vir.",
       "date": "2026-09-18",
       "category": "Garantias Fundamentais",
       "published": true,
-      "content": "O Habeas Corpus é uma garantia constitucional destinada a proteger a liberdade de locomoção diante de ilegalidade ou abuso de poder. Pode ser utilizado quando a restrição já existe ou quando há ameaça concreta de que ela ocorra.\\n\\nO cabimento depende dos fatos, da situação processual e dos documentos disponíveis. Em hipóteses urgentes, pode haver pedido de medida liminar, cuja análise cabe ao órgão judicial competente.\\n\\nA escolha da medida adequada depende de análise técnica. Este artigo oferece informação geral e não constitui promessa de resultado."
+      "content": "O Habeas Corpus é uma garantia constitucional destinada a proteger a liberdade de locomoção diante de ilegalidade ou abuso de poder. Pode ser utilizado quando a restrição já existe ou quando há ameaça concreta de que ela ocorra.\n\nO cabimento depende dos fatos, da situação processual e dos documentos disponíveis. Em hipóteses urgentes, pode haver pedido de medida liminar, cuja análise cabe ao órgão judicial competente.\n\nA escolha da medida adequada depende de análise técnica. Este artigo oferece informação geral e não constitui promessa de resultado."
     },
     {
       "id": "depoimento-acompanhado",
@@ -165,7 +166,7 @@
       "date": "2026-09-15",
       "category": "Defesa Criminal",
       "published": true,
-      "content": "A assistência de advogado em atos realizados na delegacia permite orientação técnica e acompanhamento do respeito às garantias legais.\\n\\nPara a pessoa investigada, o acompanhamento é especialmente relevante porque ela tem direito ao silêncio e não é obrigada a produzir prova contra si. A defesa também pode orientar sobre documentos e procedimentos.\\n\\nAs providências adequadas variam conforme a posição da pessoa e o estágio da investigação. O conteúdo desta página é informativo e não substitui consulta jurídica."
+      "content": "A assistência de advogado em atos realizados na delegacia permite orientação técnica e acompanhamento do respeito às garantias legais.\n\nPara a pessoa investigada, o acompanhamento é especialmente relevante porque ela tem direito ao silêncio e não é obrigada a produzir prova contra si. A defesa também pode orientar sobre documentos e procedimentos.\n\nAs providências adequadas variam conforme a posição da pessoa e o estágio da investigação. O conteúdo desta página é informativo e não substitui consulta jurídica."
     }
   ]
 }

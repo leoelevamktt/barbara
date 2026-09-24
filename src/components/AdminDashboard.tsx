@@ -531,13 +531,12 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
               <label>E-mail<input type="email" value={content.contact.email} onChange={(e) => updateContact("email", e.target.value)} /></label>
               <label>Endereço<input value={content.contact.address} onChange={(e) => updateContact("address", e.target.value)} /></label>
               <label>Horário de atendimento<input value={content.contact.hours} onChange={(e) => updateContact("hours", e.target.value)} /></label>
+              <label>Plantão de urgência<input value={content.contact.urgentHours} onChange={(e) => updateContact("urgentHours", e.target.value)} /></label>
             </div>
             <div className="admin-card">
               <span className="admin-kicker">Presença digital</span><h2>Redes sociais</h2>
               <label>Instagram<input value={content.contact.instagram} onChange={(e) => updateContact("instagram", e.target.value)} placeholder="https://instagram.com/..." /></label>
-              <label>Facebook<input value={content.contact.facebook} onChange={(e) => updateContact("facebook", e.target.value)} placeholder="https://facebook.com/..." /></label>
-              <label>LinkedIn<input value={content.contact.linkedin} onChange={(e) => updateContact("linkedin", e.target.value)} placeholder="https://linkedin.com/..." /></label>
-              <div className="admin-help">Use URLs completas. Os ícones do site passam a apontar automaticamente para esses endereços.</div>
+              <div className="admin-help">O site exibe apenas Instagram, WhatsApp e e-mail. Os links do WhatsApp e do e-mail usam os dados de contato cadastrados ao lado.</div>
             </div>
           </div>
         )}

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import BlogCard from "@/components/BlogCard";
 import { getPublishedPosts } from "@/lib/content";
 
-export const metadata: Metadata = { title: "Blog Jurídico", description: "Conteúdos informativos sobre Direito Penal, Processo Penal, garantias fundamentais e defesa criminal." };
+export const metadata: Metadata = { title: "Blog Jurídico", description: "Conteúdos informativos sobre Direito Penal, Processo Penal, garantias fundamentais e defesa criminal.", alternates: { canonical: "/blog" } };
 
 export default async function Blog() {
   const posts = await getPublishedPosts();

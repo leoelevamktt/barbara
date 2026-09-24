@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { getSiteContent } from "@/lib/content";
 import { getSiteUrl } from "@/lib/site-url";
 
@@ -34,7 +35,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
     name: site.seo.siteName,
     description: site.seo.description,
     areaServed: "Brasil",
-    address: { "@type": "PostalAddress", addressLocality: "São Paulo", addressRegion: "SP", addressCountry: "BR" },
+    address: { "@type": "PostalAddress", streetAddress: site.contact.address.split(",").slice(0, 3).join(",").trim(), addressLocality: "São Paulo", addressRegion: "SP", addressCountry: "BR" },
     telephone: site.contact.phoneDisplay,
     email: site.contact.email,
     image: "/images/barbara-hero.webp",
@@ -48,6 +49,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <Header whatsapp={site.contact.whatsapp} />
         <main id="conteudo">{children}</main>
         <Footer site={site} />
+        <WhatsAppFloat number={site.contact.whatsapp} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </body>
     </html>

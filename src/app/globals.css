@@ -544,3 +544,88 @@ body:has(.admin-login-wrap) main { min-height: 100vh; }
   .admin-blog-controls { align-items: stretch; flex-direction: column; }
   .admin-blog-controls > span { padding-left: 2px; }
 }
+
+/* Legibility pass: readable type at every screen size. */
+body { font-size: 17px; line-height: 1.7; }
+.eyebrow, .section-head > span, .page-hero span { font-size: 12px; }
+.btn { font-size: 12px; letter-spacing: .065em; }
+.text-link { font-size: 13px; }
+.desktop-nav a { font-size: 12px; }
+.hero-features span { font-size: 12px; }
+.area-card h3 { font-size: 16px; }
+.area-card p, .areas-grid.compact .area-card p { font-size: 15px; line-height: 1.72; }
+.blog-card-body > span, .blog-card-meta { font-size: 11px; }
+.blog-card h3 { font-size: 17px; line-height: 1.4; }
+.blog-card p { font-size: 14px; min-height: 0; line-height: 1.75; }
+.faq-list summary { font-size: 16px; line-height: 1.5; }
+.faq-list details p { font-size: 15px; line-height: 1.8; }
+.faq-cta span { font-size: 19px; }
+.faq-cta small { font-size: 13px; }
+.contact-info > p span { font-size: 15px; line-height: 1.65; overflow-wrap: anywhere; }
+.contact-info > p b { font-size: 11px; }
+.contact-info > p small { font-size: 12px; }
+.contact-form h3 { font-size: 17px; }
+.contact-form input, .contact-form textarea { font-size: 15px; }
+
+.about-reference-role { font-size: 16px; }
+.about-reference-copy > p:not(.about-reference-role) { font-size: 15px; line-height: 1.8; }
+.about-reference-cards p { font-size: 13px; line-height: 1.62; }
+.about-reference-cards h4 { font-size: 12px; }
+.about-reference-cards article { min-height: 130px; }
+.footer h3 { font-size: 12px; }
+.footer a, .footer p { font-size: 13px; line-height: 1.65; }
+.footer-contacts > a, .footer-hours {
+  display: flex !important; align-items: flex-start !important; gap: 9px;
+  margin: 11px 0 !important; overflow-wrap: anywhere;
+}
+.footer-contacts > a svg, .footer-hours svg {
+  width: 17px; height: 17px; min-width: 17px; flex-shrink: 0;
+  color: var(--gold); margin-top: 2px;
+}
+.footer-contacts > a span, .footer-hours span { min-width: 0; overflow-wrap: anywhere; }
+.footer-hours strong, .urgent-hours { font-weight: 700; color: var(--gold-2); }
+.inline-contact-link { color: #ddd6ca; text-underline-offset: 3px; }
+.inline-contact-link:hover { color: var(--gold-2); text-decoration: underline; }
+.footer .socials a svg { width: 17px; height: 17px; flex-basis: 17px; }
+.socials a { width: 39px; height: 39px; flex-basis: 39px; }
+.socials svg { width: 17px; height: 17px; }
+.footer .socials a { width: 39px; height: 39px; min-width: 39px; min-height: 39px; flex-basis: 39px; }
+
+.whatsapp-float {
+  position: fixed; z-index: 75; bottom: max(24px, env(safe-area-inset-bottom));
+  right: max(24px, env(safe-area-inset-right));
+  display: inline-flex; gap: 12px; align-items: center; justify-content: center;
+  border-radius: 999px; padding: 14px 20px; min-height: 56px;
+  background: #22bf62; color: #07150e; font-size: 14px; font-weight: 800;
+  box-shadow: 0 8px 34px rgba(0,0,0,.38);
+  border: 1px solid #63db92; transition: transform .2s ease, box-shadow .2s ease;
+}
+.whatsapp-float svg { width: 26px; height: 26px; flex-shrink: 0; }
+.whatsapp-float:hover, .whatsapp-float:focus-visible {
+  transform: translateY(-3px); box-shadow: 0 13px 32px rgba(0,0,0,.5);
+}
+.whatsapp-float:focus-visible { outline: 3px solid var(--gold-2); outline-offset: 3px; }
+body:has(.admin-shell) .whatsapp-float,
+body:has(.admin-login-wrap) .whatsapp-float { display: none; }
+.admin-card label { font-size: 13px; }
+.admin-card input, .admin-card textarea { font-size: 15px; }
+.admin-sidebar nav button { font-size: 13px; }
+.admin-login p { font-size: 15px; }
+.admin-login > a { font-size: 13px; }
+
+@media (max-width: 1080px) and (min-width: 821px) {
+  .desktop-nav a { font-size: 11px; }
+}
+@media (max-width: 820px) {
+  .mobile-nav a { font-size: 14px; }
+  .hero-copy > p { font-size: 17px; }
+  .about-reference-cards article { min-height: 0; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .hero-copy > p { font-size: 16px; }
+  .hero-features span { font-size: 11px; }
+  .about-reference-copy > p:not(.about-reference-role) { font-size: 15px; }
+  .whatsapp-float { width: 56px; height: 56px; padding: 0; right: 15px; bottom: max(16px, env(safe-area-inset-bottom)); }
+  .whatsapp-float span { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}

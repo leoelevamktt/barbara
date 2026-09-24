@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AreasGrid from "@/components/AreasGrid";
 import { getSiteContent } from "@/lib/content";
 
-export const metadata: Metadata = { title: "Áreas de Atuação", description: "Conheça as principais áreas de atuação em Direito Penal e Processo Penal da Bárbara Cordeiro Advocacia Criminal." };
+export const metadata: Metadata = { title: "Áreas de Atuação", description: "Conheça as principais áreas de atuação em Direito Penal e Processo Penal da Bárbara Cordeiro Advocacia Criminal.", alternates: { canonical: "/areas-de-atuacao" } };
 
 export default async function Areas() {
   const site = await getSiteContent();

@@ -78,10 +78,10 @@ export default async function Home() {
           <div className="contact-info">
             <div className="section-head left"><span>Atendimento</span><h2>Contato</h2></div>
             <p><MapPin /> <span><b>Endereço</b>{site.contact.address}<small>Atendimento somente com agendamento.</small></span></p>
-            <p><Phone /> <span><b>WhatsApp</b>{site.contact.phoneDisplay}</span></p>
-            <p><Mail /> <span><b>E-mail</b>{site.contact.email}</span></p>
-            <p><Clock3 /> <span><b>Horário de atendimento</b>{site.contact.hours}</span></p>
-            <SocialLinks instagram={site.contact.instagram} facebook={site.contact.facebook} linkedin={site.contact.linkedin} whatsapp={site.contact.whatsapp} className="contact-socials" />
+            <p><Phone /> <span><b>WhatsApp</b><a className="inline-contact-link" href={wa} target="_blank" rel="noopener noreferrer">{site.contact.phoneDisplay}</a></span></p>
+            <p><Mail /> <span><b>E-mail</b><a className="inline-contact-link" href={`mailto:${site.contact.email}`}>{site.contact.email}</a></span></p>
+            <p><Clock3 /> <span><b>Horário de atendimento</b>{site.contact.hours}<br /><strong className="urgent-hours">{site.contact.urgentHours}</strong></span></p>
+            <SocialLinks instagram={site.contact.instagram} whatsapp={site.contact.whatsapp} email={site.contact.email} className="contact-socials" />
           </div>
           <ContactForm whatsapp={site.contact.whatsapp} />
           <MapEmbed address={site.contact.address} />
