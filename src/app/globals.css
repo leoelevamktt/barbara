@@ -100,6 +100,8 @@ p { color: var(--muted); }
 .area-card h3 { font-family: Arial, sans-serif; color: var(--gold-2); font-size: 14px; text-transform: uppercase; letter-spacing: .055em; }
 .area-card p { max-width: 330px; margin: 11px auto 0; font-size: 13px; line-height: 1.65; }
 .area-card-wide { grid-column: span 3; min-height: 150px; display: grid; place-items: center; align-content: center; }
+.area-card-featured { grid-column: 1 / -1; min-height: 158px; display: grid; justify-items: center; align-content: center; border-color: #644d30; background: linear-gradient(125deg, #1a1510, #0d0d0d); }
+.area-card-featured p { max-width: 650px; }
 .areas-grid.compact .area-card { min-height: 190px; padding: 25px 18px; }
 .areas-grid.compact .area-card p { font-size: 12px; }
 

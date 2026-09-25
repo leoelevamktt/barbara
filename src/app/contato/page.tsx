@@ -7,7 +7,7 @@ import { getSiteContent } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contato",
-  description: "Entre em contato com a Bárbara Cordeiro Advocacia Criminal e solicite atendimento.",
+  description: "Entre em contato com a Barbara Cordeiro Advocacia Criminal e solicite atendimento.",
   alternates: { canonical: "/contato" }
 };
 

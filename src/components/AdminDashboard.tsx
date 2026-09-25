@@ -298,7 +298,7 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
       <aside className="admin-sidebar">
         <div className="admin-brand">
           <span className="admin-monogram small">BC</span>
-          <strong>Bárbara Cordeiro</strong>
+          <strong>Barbara Cordeiro</strong>
           <small>Administração</small>
         </div>
 

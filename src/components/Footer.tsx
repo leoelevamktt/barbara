@@ -11,7 +11,7 @@ export default function Footer({ site }: { site: SiteContent }) {
     <footer className="footer">
       <div className="shell footer-grid">
         <div className="footer-brand">
-          <Image src="/images/logo-transparent.png" alt="Bárbara Cordeiro Advocacia Criminal"
+          <Image src="/images/logo-transparent.png" alt="Barbara Cordeiro Advocacia Criminal"
             width={1280} height={587} sizes="(max-width: 560px) 210px, 220px" />
         </div>
         <div>
@@ -39,7 +39,7 @@ export default function Footer({ site }: { site: SiteContent }) {
           <SocialLinks instagram={contact.instagram} whatsapp={contact.whatsapp} email={contact.email} />
         </div>
       </div>
-      <div className="footer-bottom">© {new Date().getFullYear()} Bárbara Cordeiro Advocacia Criminal. Todos os direitos reservados.</div>
+      <div className="footer-bottom">© {new Date().getFullYear()} Barbara Cordeiro Advocacia Criminal. Todos os direitos reservados.</div>
     </footer>
   );
 }

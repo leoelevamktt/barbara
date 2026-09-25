@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: site.seo.siteName,
       title: site.seo.defaultTitle,
       description: site.seo.description,
-      images: [{ url: "/images/barbara-hero.webp", width: 864, height: 1184, alt: "Bárbara Cordeiro - Advogada Criminalista" }]
+      images: [{ url: "/images/barbara-hero.webp", width: 864, height: 1184, alt: "Barbara Cordeiro - Advogada Criminalista" }]
     },
     twitter: { card: "summary_large_image", title: site.seo.defaultTitle, description: site.seo.description, images: ["/images/barbara-hero.webp"] },
     robots: { index: true, follow: true }

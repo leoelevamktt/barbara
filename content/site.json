@@ -1,6 +1,6 @@
 {
   "profile": {
-    "name": "Bárbara Cordeiro",
+    "name": "Barbara Cordeiro",
     "title": "Advogada Criminalista",
     "oab": "OAB/SP 538.509",
     "heroTitle": "Defesa Técnica, Estratégica e Humanizada.",
@@ -29,6 +29,12 @@
     "urgentHours": "Plantão de urgência: 24 horas"
   },
   "areas": [
+    {
+      "slug": "prisao-em-flagrante",
+      "title": "Prisão em Flagrante",
+      "description": "Acompanhamento na delegacia 24h, com orientação e defesa técnica desde os primeiros momentos da prisão.",
+      "icon": "Siren"
+    },
     {
       "slug": "audiencia-de-custodia",
       "title": "Audiência de Custódia",
@@ -92,8 +98,8 @@
   ],
   "faqs": [
     {
-      "q": "Fui preso. O que devo fazer?",
-      "a": "Entre em contato imediatamente com um advogado criminalista. O acompanhamento jurídico é fundamental desde o primeiro momento para garantir seus direitos e evitar prejuízos ao caso."
+      "q": "Fui preso, o que devo fazer?",
+      "a": "Entre em contato imediatamente com a Dra. Barbara Cordeiro para receber orientação e acompanhamento na delegacia. A assistência jurídica desde o primeiro momento é importante para resguardar seus direitos e avaliar as medidas cabíveis ao caso."
     },
     {
       "q": "Posso ser ouvido sem advogado?",
@@ -113,8 +119,8 @@
     }
   ],
   "seo": {
-    "siteName": "Bárbara Cordeiro Advocacia Criminal",
-    "defaultTitle": "Bárbara Cordeiro | Advogada Criminalista em São Paulo",
+    "siteName": "Barbara Cordeiro Advocacia Criminal",
+    "defaultTitle": "Barbara Cordeiro | Advogada Criminalista em São Paulo",
     "description": "Advocacia criminal técnica, estratégica e humanizada em São Paulo, com atuação em Direito Penal e Processo Penal.",
     "keywords": [
       "advogada criminalista",
@@ -122,6 +128,8 @@
       "direito penal",
       "processo penal",
       "habeas corpus",
+      "prisão em flagrante",
+      "acompanhamento na delegacia 24h",
       "audiência de custódia",
       "tribunal do júri",
       "São Paulo"

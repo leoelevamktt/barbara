@@ -4,7 +4,7 @@ import { getSiteContent } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Sobre a Advogada",
-  description: "Conheça a trajetória, missão, visão e valores da Dra. Bárbara Cordeiro, advogada criminalista em São Paulo.",
+  description: "Conheça a trajetória, missão, visão e valores da Dra. Barbara Cordeiro, advogada criminalista em São Paulo.",
   alternates: { canonical: "/sobre" }
 };
 

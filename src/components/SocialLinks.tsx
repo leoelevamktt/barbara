@@ -9,7 +9,7 @@ type SocialProps = {
 };
 export default function SocialLinks({ instagram, whatsapp, email, className = "" }: SocialProps) {
   const items: Array<{ href: string; label: string; icon: React.ReactNode }> = [];
-  if (instagram) items.push({ href: instagram, label: "Instagram de Bárbara Cordeiro", icon: <FaInstagram /> });
+  if (instagram) items.push({ href: instagram, label: "Instagram de Barbara Cordeiro", icon: <FaInstagram /> });
   if (whatsapp) items.push({ href: `https://wa.me/${whatsapp}`, label: "Conversar pelo WhatsApp", icon: <FaWhatsapp /> });
   if (email) items.push({ href: `mailto:${email}`, label: "Enviar e-mail", icon: <Mail /> });
 

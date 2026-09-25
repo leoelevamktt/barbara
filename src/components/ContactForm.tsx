@@ -22,7 +22,7 @@ export default function ContactForm({ whatsapp }: { whatsapp: string }) {
       consentimento: data.get("consentimento") === "on"
     };
     const text = [
-      "Olá, Dra. Bárbara. Gostaria de solicitar atendimento.",
+      "Olá, Dra. Barbara. Gostaria de solicitar atendimento.",
       `Nome: ${lead.nome}`, `Telefone: ${lead.telefone}`,
       `E-mail: ${lead.email}`, `Assunto: ${lead.assunto}`,
       `Mensagem: ${lead.mensagem}`

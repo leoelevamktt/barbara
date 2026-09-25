@@ -32,7 +32,7 @@ export default async function Home() {
           </div>
           <div className="hero-photo-wrap">
             <div className="hero-glow" />
-            <Image className="hero-photo" src="/images/barbara-hero.webp" alt="Dra. Bárbara Cordeiro" width={864} height={1184} priority sizes="(max-width: 900px) 100vw, 44vw" />
+            <Image className="hero-photo" src="/images/barbara-hero.webp" alt="Dra. Barbara Cordeiro" width={864} height={1184} priority sizes="(max-width: 900px) 100vw, 44vw" />
           </div>
         </div>
         <div className="hero-features">

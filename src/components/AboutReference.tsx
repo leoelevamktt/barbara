@@ -18,7 +18,7 @@ export default function AboutReference({ site, breadcrumb = false }: {
           <div className="about-reference-photo">
             <Image
               src="/images/barbara-about.webp"
-              alt="Dra. Bárbara Cordeiro"
+              alt="Dra. Barbara Cordeiro"
               width={864}
               height={1184}
               sizes="(max-width: 820px) 100vw, 42vw"
@@ -26,7 +26,7 @@ export default function AboutReference({ site, breadcrumb = false }: {
           </div>
 
           <div className="about-reference-copy">
-            <h3>Dra. Bárbara<br />Cordeiro</h3>
+            <h3>Dra. Barbara<br />Cordeiro</h3>
             <p className="about-reference-role">{site.profile.title}<br />{site.profile.oab}</p>
             <div className="gold-line" />
             <p>{site.profile.aboutLead}</p>

@@ -27,8 +27,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     "@context": "https://schema.org", "@type": "BlogPosting",
     mainEntityOfPage: getSiteUrl() + "/blog/" + slug,
     headline: post.title, description: post.excerpt, datePublished: post.date,
-    author: { "@type": "Person", name: "Bárbara Cordeiro" },
-    publisher: { "@type": "Organization", name: "Bárbara Cordeiro Advocacia Criminal" }
+    author: { "@type": "Person", name: "Barbara Cordeiro" },
+    publisher: { "@type": "Organization", name: "Barbara Cordeiro Advocacia Criminal" }
   };
   return (
     <article>
