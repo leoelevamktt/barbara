@@ -5,11 +5,11 @@ import LeadsPanel from "@/components/LeadsPanel";
 import {
   Activity, BookOpen, BriefcaseBusiness, CheckCircle2, ChevronDown, ChevronUp, Copy,
   CircleHelp, Download, ExternalLink, FileText, Globe2, Inbox, LayoutDashboard, LogOut, MessageSquareText,
-  Plus, RefreshCw, Save, Search, Settings2, ShieldCheck, Trash2, Upload, UserRound, X
+  Plus, RefreshCw, Save, Search, Settings2, ShieldCheck, Star, Trash2, Upload, UserRound, X
 } from "lucide-react";
 import type { Area, Faq, Post, SiteContent } from "@/lib/content";
 
-type Tab = "dashboard" | "leads" | "site" | "about" | "areas" | "faq" | "blog" | "seo" | "contact";
+type Tab = "dashboard" | "leads" | "site" | "about" | "areas" | "faq" | "reviews" | "blog" | "seo" | "contact";
 
 const blankPost: Post = {
   id: "",
@@ -136,7 +136,7 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
     if (!file) return;
     try {
       const parsed = JSON.parse(await file.text()) as SiteContent;
-      if (!parsed?.profile?.name || !Array.isArray(parsed.posts) || !Array.isArray(parsed.areas) || !Array.isArray(parsed.faqs)) {
+      if (!parsed?.profile?.name || !Array.isArray(parsed.posts) || !Array.isArray(parsed.areas) || !Array.isArray(parsed.faqs) || (parsed.reviews && !Array.isArray(parsed.reviews.items))) {
         throw new Error("Estrutura inválida.");
       }
       setContent(parsed);
@@ -238,6 +238,54 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
     });
   }
 
+  function updateReview(index: number, key: "name" | "rating" | "text", value: string | number) {
+    mutate((prev) => ({
+      ...prev,
+      reviews: {
+        ...(prev.reviews ?? { sourceName: "Google", profileUrl: "", items: [] }),
+        items: (prev.reviews?.items ?? []).map((review, i) =>
+          i === index ? { ...review, [key]: value } : review
+        )
+      }
+    }));
+  }
+
+  function updateReviewUrl(value: string) {
+    mutate((prev) => ({
+      ...prev,
+      reviews: {
+        ...(prev.reviews ?? { sourceName: "Google", profileUrl: "", items: [] }),
+        profileUrl: value
+      }
+    }));
+  }
+
+  function addReview() {
+    mutate((prev) => ({
+      ...prev,
+      reviews: {
+        ...(prev.reviews ?? { sourceName: "Google", profileUrl: "", items: [] }),
+        items: [...(prev.reviews?.items ?? []), {
+          id: `avaliacao-${Date.now()}`,
+          name: "",
+          rating: 5,
+          text: ""
+        }]
+      }
+    }));
+  }
+
+  function removeReview(index: number) {
+    if (!confirm("Remover esta avaliação da página inicial?")) return;
+    mutate((prev) => ({
+      ...prev,
+      reviews: {
+        ...(prev.reviews ?? { sourceName: "Google", profileUrl: "", items: [] }),
+        items: (prev.reviews?.items ?? []).filter((_, i) => i !== index)
+      }
+    }));
+  }
+
   function updateFaq(index: number, key: keyof Faq, value: string) {
     mutate((prev) => ({
       ...prev,
@@ -276,6 +324,7 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
     { id: "about" as Tab, label: "Sobre", icon: UserRound },
     { id: "areas" as Tab, label: "Áreas de atuação", icon: BriefcaseBusiness },
     { id: "faq" as Tab, label: "Perguntas frequentes", icon: CircleHelp },
+    { id: "reviews" as Tab, label: "Avaliações", icon: Star },
     { id: "blog" as Tab, label: "Blog", icon: BookOpen },
     { id: "seo" as Tab, label: "SEO", icon: Search },
     { id: "contact" as Tab, label: "Contato e redes", icon: MessageSquareText }
@@ -288,6 +337,7 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
     about: "Sobre a advogada",
     areas: "Áreas de atuação",
     faq: "Perguntas frequentes",
+    reviews: "Avaliações do Google",
     blog: "Blog jurídico",
     seo: "SEO e indexação",
     contact: "Contato e redes sociais"
@@ -465,6 +515,59 @@ export default function AdminDashboard({ initial }: { initial: SiteContent }) {
                   <button onClick={() => moveFaq(index, -1)} disabled={index === 0}><ChevronUp /></button>
                   <button onClick={() => moveFaq(index, 1)} disabled={index === content.faqs.length - 1}><ChevronDown /></button>
                   <button className="danger" onClick={() => deleteFaq(index)}><Trash2 /></button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {tab === "reviews" && (
+          <div className="admin-collection">
+            <div className="admin-card full" style={{ marginBottom: 16 }}>
+              <span className="admin-kicker">Avaliações públicas</span>
+              <h2>Origem e apresentação</h2>
+              <label>Link do perfil no Google
+                <input type="url" placeholder="https://share.google/..."
+                  value={content.reviews?.profileUrl ?? ""}
+                  onChange={(e) => updateReviewUrl(e.target.value)} />
+              </label>
+              <p className="admin-help">
+                Publique somente avaliações espontâneas, com autorização quando aplicável,
+                texto fiel ao original e referência à origem. Observe as normas éticas de
+                publicidade da OAB.
+              </p>
+            </div>
+            <div className="admin-collection-toolbar">
+              <p>{(content.reviews?.items ?? []).length} avaliações cadastradas</p>
+              <button className="btn btn-gold" type="button" onClick={addReview}>
+                <Plus size={16} />Adicionar avaliação
+              </button>
+            </div>
+            {(content.reviews?.items ?? []).map((review, index) => (
+              <div className="admin-card admin-repeater" key={review.id}>
+                <div className="admin-repeater-index">{String(index + 1).padStart(2, "0")}</div>
+                <div className="admin-repeater-fields">
+                  <div className="two-cols">
+                    <label>Nome conforme publicado
+                      <input value={review.name} onChange={(e) => updateReview(index, "name", e.target.value)} />
+                    </label>
+                    <label>Estrelas
+                      <select value={review.rating}
+                        onChange={(e) => updateReview(index, "rating", Number(e.target.value))}>
+                        {[5, 4, 3, 2, 1].map((value) =>
+                          <option key={value} value={value}>{value} estrela{value === 1 ? "" : "s"}</option>
+                        )}
+                      </select>
+                    </label>
+                  </div>
+                  <label>Avaliação (transcreva fielmente)
+                    <textarea rows={6} value={review.text}
+                      onChange={(e) => updateReview(index, "text", e.target.value)} />
+                  </label>
+                </div>
+                <div className="admin-repeater-actions">
+                  <button type="button" className="danger" aria-label="Excluir avaliação"
+                    onClick={() => removeReview(index)}><Trash2 size={15} /></button>
                 </div>
               </div>
             ))}
