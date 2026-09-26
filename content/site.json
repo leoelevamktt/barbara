@@ -176,5 +176,23 @@
       "published": true,
       "content": "A assistência de advogado em atos realizados na delegacia permite orientação técnica e acompanhamento do respeito às garantias legais.\n\nPara a pessoa investigada, o acompanhamento é especialmente relevante porque ela tem direito ao silêncio e não é obrigada a produzir prova contra si. A defesa também pode orientar sobre documentos e procedimentos.\n\nAs providências adequadas variam conforme a posição da pessoa e o estágio da investigação. O conteúdo desta página é informativo e não substitui consulta jurídica."
     }
-  ]
+  ],
+  "reviews": {
+    "sourceName": "Google",
+    "profileUrl": "https://share.google/Uy69dIi4YJJLQmL28",
+    "items": [
+      {
+        "id": "claudia-cilene",
+        "name": "Claudia Cilene",
+        "rating": 5,
+        "text": "Excelente profissional!\nMuito obrigada por cuidar de tudo com tanta honestidade, paciência e atenção aos detalhes. Me senti segura o tempo todo."
+      },
+      {
+        "id": "helaine-casao",
+        "name": "helaine casao",
+        "rating": 5,
+        "text": "A Dra. Bárbara Cordeiro é uma profissional excepcional. Atua com muita competência, segurança e excelência. Além do grande conhecimento técnico, demonstra empatia, atenção e verdadeiro compromisso com seus clientes. Sempre muito prestativa, clara e direta nas orientações, transmite confiança em cada etapa do processo. Recomendo fortemente seu trabalho pra quem busca uma advogada dedicada, ética e altamente qualificada."
+      }
+    ]
+  }
 }
