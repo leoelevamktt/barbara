@@ -5,6 +5,7 @@ import AreasGrid from "@/components/AreasGrid";
 import AboutReference from "@/components/AboutReference";
 import FAQ from "@/components/FAQ";
 import BlogCard from "@/components/BlogCard";
+import ReviewsSection from "@/components/ReviewsSection";
 import ContactForm from "@/components/ContactForm";
 import MapEmbed from "@/components/MapEmbed";
 import SocialLinks from "@/components/SocialLinks";
@@ -53,6 +54,8 @@ export default async function Home() {
           <AreasGrid areas={site.areas} compact />
         </div>
       </section>
+
+      <ReviewsSection reviews={site.reviews} />
 
       <section className="section">
         <div className="shell">
