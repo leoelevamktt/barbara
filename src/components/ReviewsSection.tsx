@@ -25,14 +25,14 @@ export default function ReviewsSection({ reviews }: { reviews: SiteContent["revi
 
         <div className="reviews-grid">
           {reviews.items.map((review) => (
-            <figure className="review-card" key={review.id}>
+            <article className="review-card" key={review.id}>
               <div className="review-card-top">
                 <div className="review-reviewer">
                   <div className="review-avatar" aria-hidden="true">
                     {review.name.trim().slice(0, 1).toUpperCase()}
                   </div>
                   <div>
-                    <figcaption>{review.name}</figcaption>
+                    <strong>{review.name}</strong>
                     <span>Publicado no Google</span>
                   </div>
                 </div>
@@ -45,7 +45,7 @@ export default function ReviewsSection({ reviews }: { reviews: SiteContent["revi
                 ))}
               </div>
               <blockquote>{review.text}</blockquote>
-            </figure>
+            </article>
           ))}
         </div>
         <p className="reviews-source-note">
